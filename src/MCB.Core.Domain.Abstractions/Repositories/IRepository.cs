@@ -12,8 +12,8 @@ public interface IRepository<TAggregationRoot>
     Task<(bool success, int removeCount)> RemoveAsync(Func<TAggregationRoot, bool> expression, CancellationToken cancellationToken);
     Task<(bool success, int removeCount)> RemoveAllAsync(CancellationToken cancellationToken);
     Task<TAggregationRoot> GetAsync(Guid tenantId, Guid id, CancellationToken cancellationToken);
-    IAsyncEnumerable<TAggregationRoot> GetAsync(Func<TAggregationRoot, bool> expression, CancellationToken cancellationToken);
-    IAsyncEnumerable<TAggregationRoot> GetAllAsync(Guid tenantId, Guid id, CancellationToken cancellationToken);
+    Task<IEnumerable<TAggregationRoot>> GetAsync(Func<TAggregationRoot, bool> expression, CancellationToken cancellationToken);
+    Task<IEnumerable<TAggregationRoot>> GetAllAsync(Guid tenantId, Guid id, CancellationToken cancellationToken);
     IEnumerable<TAggregationRoot> Get(Func<TAggregationRoot, bool> expression);
     IEnumerable<TAggregationRoot> GetAll(Guid tenantId, Guid id);
 }
