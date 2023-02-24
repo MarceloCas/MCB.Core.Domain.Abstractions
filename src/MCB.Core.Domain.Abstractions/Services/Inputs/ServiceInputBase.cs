@@ -1,17 +1,19 @@
-﻿namespace MCB.Core.Domain.Abstractions.Services.Inputs;
+﻿using MCB.Core.Infra.CrossCutting.DesignPatterns.Abstractions.ExecutionInfo;
 
-public abstract record ServiceInputBase
+namespace MCB.Core.Domain.Abstractions.Services.Inputs;
+
+public readonly record struct ServiceInputBase
 {
     // Properties
-    public Guid TenantId { get; }
-    public string ExecutionUser { get; }
-    public string SourcePlatform { get; }
+    public ExecutionInfo ExecutionInfo { get; }
 
     // Constructors
-    protected ServiceInputBase(Guid tenantId, string executionUser, string sourcePlatform)
+    public ServiceInputBase(ExecutionInfo executionInfo)
     {
-        TenantId = tenantId;
-        ExecutionUser = executionUser;
-        SourcePlatform = sourcePlatform;
+        ExecutionInfo = executionInfo;
+    }
+    public ServiceInputBase(ref ExecutionInfo executionInfo)
+    {
+        ExecutionInfo = executionInfo;
     }
 }

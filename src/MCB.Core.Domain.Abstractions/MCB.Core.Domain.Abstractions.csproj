@@ -22,8 +22,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="MCB.Core.Domain.Entities.Abstractions" Version="0.37.0-alpha" />
-	  <PackageReference Include="MCB.Core.Infra.CrossCutting.DesignPatterns.Abstractions" Version="0.43.0-alpha" />
+	  <PackageReference Include="MCB.Core.Domain.Entities.Abstractions" Version="0.39.0-alpha" />
+	  <PackageReference Include="MCB.Core.Infra.CrossCutting.DesignPatterns.Abstractions" Version="0.47.0-alpha" />
 	</ItemGroup>
 
 </Project>
